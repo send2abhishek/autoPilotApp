@@ -27,7 +27,7 @@ class Fileupload extends Component {
       .then((response) => {
         alert("file uploaded");
       })
-      .catch((err) => console.log("error is", err));
+      .catch((err) => alert("something went wrong"));
   };
   render() {
     return (
