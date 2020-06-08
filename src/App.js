@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Container from "./Components/Container";
 import Fileupload from "./Components/Fileupload";
-
+import FileDetails from "./Components/fileDetails";
 function App() {
   return (
     <div>
@@ -12,6 +12,10 @@ function App() {
           <Route
             path="/uploadXs"
             render={(props) => <Fileupload {...props} />}
+          />
+          <Route
+            path="/uploads"
+            render={(props) => <FileDetails {...props} />}
           />
           <Route path="*" render={(props) => <Redirect to="/" />} />
         </Switch>

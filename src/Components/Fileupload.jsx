@@ -15,9 +15,9 @@ class Fileupload extends Component {
   handleSubmitAvatar = (e) => {
     e.preventDefault();
     let formData = new FormData();
-
+    console.log("data", this.state.avatar);
     formData.append("name", this.state.avatar);
-    formData.append("title", "demo file");
+    formData.append("title", this.state.avatar.name);
     axios
       .post("/file", formData, {
         headers: {
@@ -25,7 +25,7 @@ class Fileupload extends Component {
         },
       })
       .then((response) => {
-        alert("file uploaded");
+        this.props.history.replace("/uploads");
       })
       .catch((err) => alert("something went wrong"));
   };
@@ -34,7 +34,7 @@ class Fileupload extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="col-sm-10">
+            <div className="col-sm-12">
               <form>
                 <div className="form-group">
                   <label>Name:</label>
