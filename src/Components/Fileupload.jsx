@@ -28,7 +28,7 @@ class Fileupload extends Component {
       .then((response) => {
         this.props.history.replace("/uploads");
       })
-      .catch((err) => alert("something went wrong"));
+      .catch((err) => alert("File format not supported. Only .xlsx, .pdf and .doc are supported."));
   };
   render() {
     return (

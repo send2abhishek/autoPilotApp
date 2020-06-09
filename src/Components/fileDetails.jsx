@@ -115,7 +115,8 @@ class Filedetails extends Component {
               <h4 style={{color: 'grey', marginBottom:'15px'}}>Select from below uploaded files: </h4>
               <form>
                 {mapData}
-
+<br />
+<br />
                 <button
                   type="submit"
                   className="btn btn-primary"
@@ -124,7 +125,7 @@ class Filedetails extends Component {
                   Convert to Canonical Form
                 </button>
               </form>
-
+<br />
               <table className="table">
                 {this.state.CanonicalData.length > 0 ? (
                   <thead>
