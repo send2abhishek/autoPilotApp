@@ -19,6 +19,14 @@ class Filedetails extends Component {
         console.log(err);
       });
   };
+
+  radioHandler = (e)=>{
+    const { name, value } = e.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   render() {
     let mapData =
       this.state.data.length > 0 ? (
@@ -26,7 +34,7 @@ class Filedetails extends Component {
           return (
             <div key={index} className="form-check">
               <label className="form-check-label">
-                <input type="radio" className="form-check-input" />
+                <input type="radio" className="form-check-input" onChange={this.radioHandler} />
                 {data.title}
               </label>
             </div>
@@ -39,7 +47,13 @@ class Filedetails extends Component {
       <div>
         <div className="container border">
           <div className="row">
-            <div className="col-sm">
+          <div className="col-sm-12">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{"height":"45px"}}>
+          <a class="navbar-brand" style={{"marginLeft":"37%"}} href="#">Prototype-3</a>
+            </nav>
+          </div>
+            <div className="col-sm border-right">
+            <h5 style={{color: 'grey'}}>
               <ul className="list-unstyled">
                 <br />
 
@@ -49,21 +63,22 @@ class Filedetails extends Component {
                     <li>Global Template</li>
                     <li>Org</li>
                     <li>System Config</li>
-                    <li>System Meta Dats</li>
+                    <li>System Meta Data</li>
                   </ul>
                 </li>
               </ul>
+              </h5>
             </div>
 
-            <div className="col-sm">
+            <div className="col-sm-7">
               <br />
               <h2>View XL Import</h2>
               <br />
-              <h4>Select below uploaded file: </h4>
+              <h4 style={{color: 'grey', marginBottom:'15px'}}>Select from below uploaded files: </h4>
               <form>
                 {mapData}
 
-                <button type="submit" className="btn btn-primary">
+                <button type="submit" className="btn btn-primary" style={{"marginTop" : "37px", "marginBottom" : "10px"}}>
                   Convert to Canonical Form
                 </button>
               </form>

@@ -12,7 +12,13 @@ class Container extends Component {
     return (
       <div className="container border">
         <div className="row">
-          <div className="col-sm">
+          <div className="col-sm-12">
+          <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{"height":"45px"}}>
+          <a class="navbar-brand" style={{"marginLeft":"37%"}} href="#">Prototype-1</a>
+            </nav>
+          </div>
+          <div className="col-sm border-right">
+          <h5 style={{color: 'grey'}}>
             <ul className="list-unstyled">
               <br />
 
@@ -22,17 +28,18 @@ class Container extends Component {
                   <li>Global Template</li>
                   <li>Org</li>
                   <li>System Config</li>
-                  <li>System Meta Dats</li>
+                  <li>System Meta Data</li>
                 </ul>
               </li>
             </ul>
+            </h5>
           </div>
 
-          <div className="col-sm">
+          <div className="col-sm-7">
             <br />
-            <h2>View</h2>
+            <h2 >View</h2>
             <br />
-            <h4>Select method of upload: </h4>
+            <h4 style={{color: 'grey', marginBottom:'12px'}}>Select method of upload: </h4>
             <form>
               <div className="form-check">
                 <label className="form-check-label">
@@ -86,7 +93,7 @@ class Container extends Component {
               <br />
               <button
                 type="submit"
-                className="btn btn-primary"
+                className="btn btn-primary" style={{"marginBottom":"10px"}}
                 onClick={() => this.clickHandler()}
               >
                 Next
