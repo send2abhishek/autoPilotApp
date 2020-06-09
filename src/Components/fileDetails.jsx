@@ -5,6 +5,7 @@ class Filedetails extends Component {
     super(props);
     this.state = {
       data: [],
+      name: "",
     };
   }
   componentDidMount = () => {
@@ -20,13 +21,11 @@ class Filedetails extends Component {
       });
   };
 
-  radioHandler = (e)=>{
-    const { name, value } = e.target;
+  handleChange = (e) => {
     this.setState({
-      [name]: value
+      name: e.target.value,
     });
   };
-
   render() {
     let mapData =
       this.state.data.length > 0 ? (
@@ -34,7 +33,13 @@ class Filedetails extends Component {
           return (
             <div key={index} className="form-check">
               <label className="form-check-label">
-                <input type="radio" className="form-check-input" onChange={this.radioHandler} />
+                <input
+                  type="radio"
+                  className="form-check-input"
+                  value={data.title}
+                  onChange={this.handleChange}
+                  checked={this.state.name === data.title}
+                />
                 {data.title}
               </label>
             </div>
