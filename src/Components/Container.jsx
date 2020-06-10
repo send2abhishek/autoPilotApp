@@ -1,14 +1,11 @@
 import React, { Component } from "react";
 
 class Container extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
 
-  //handling the next button which takes the selected option of upload to the file upload page.
+  //handling the next button which takes the selected option of upload to the file upload page i.e. Redirecting to the uploadXs page.
   clickHandler = () => {
+
+    //this statement contains history.replace method, which is coming from react router dom.
     this.props.history.replace("/uploadXs");
   };
 
@@ -52,13 +49,12 @@ class Container extends Component {
                     id="radio1"
                     name="optradio"
                     value="option1"
-                    checked
                   />
                   XL Upload
                 </label>
               </div>
               <div className="form-check">
-                <label className="form-check-label" for="radio2">
+                <label className="form-check-label">
                   <input
                     type="radio"
                     className="form-check-input"

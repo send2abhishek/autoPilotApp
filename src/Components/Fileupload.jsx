@@ -20,9 +20,10 @@ class Fileupload extends Component {
   handleSubmitAvatar = (e) => {
     e.preventDefault();
     let formData = new FormData();
-    console.log("data", this.state.avatar);
+
     formData.append("name", this.state.avatar);
     formData.append("title", this.state.avatar.name);
+    
     axios
       .post("/file", formData, {
         headers: {

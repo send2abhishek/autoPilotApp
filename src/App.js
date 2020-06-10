@@ -6,6 +6,9 @@ import FileDetails from "./Components/fileDetails";
 import './App.css';
 
 function App() {
+
+  //different routes of the application are defined.
+  //props are used as properties of react router dom.
   return (
     <div>
       <BrowserRouter>
