@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "../axios-instance";
 class Filedetails extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -9,6 +10,8 @@ class Filedetails extends Component {
       CanonicalData: [],
     };
   }
+
+  //already uploaded files will be shown as a list for conversion in canonical data.
   componentDidMount = () => {
     axios
       .get("/")
@@ -21,6 +24,8 @@ class Filedetails extends Component {
         console.log(err);
       });
   };
+
+  //calling an api to get canonical data from the database.
   CanonicalHandler = (e) => {
     e.preventDefault();
     axios
@@ -35,13 +40,16 @@ class Filedetails extends Component {
         console.log(err);
       });
   };
+
+//handling change for radio button click.
   handleChange = (e) => {
     this.setState({
       name: e.target.value,
     });
   };
+
+  //for view
   render() {
-    console.log("sys data", this.state.CanonicalData);
     let mapData =
       this.state.data.length > 0 ? (
         this.state.data.map((data, index) => {
@@ -86,12 +94,12 @@ class Filedetails extends Component {
         <div className="container border">
           <div className="row">
           <div className="col-sm-12">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{"height":"45px"}}>
-          <a class="navbar-brand" style={{"marginLeft":"37%"}} href="#">Prototype-3</a>
+          <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dimensions">
+          <a class="navbar-brand navbar-text" href="#">Prototype-3</a>
             </nav>
           </div>
             <div className="col-sm border-right">
-            <h5 style={{color: 'grey'}}>
+            <h5 className="side-bar-text">
               <ul className="list-unstyled">
                 <br />
 
@@ -109,24 +117,20 @@ class Filedetails extends Component {
             </div>
 
             <div className="col-sm-7">
-              <br />
-              <h2>View XL Import</h2>
-              <br />
-              <h4 style={{color: 'grey', marginBottom:'15px'}}>Select from below uploaded files: </h4>
+              <h2 className="margin-h2-top">View XL Import</h2>
+              <h4 className="h4-text margin-h4-top">Select from below uploaded files: </h4>
               <form>
                 {mapData}
-<br />
-<br />
                 <button
                   type="submit"
-                  className="btn btn-primary"
+                  className="btn btn-primary margin-details-top"
                   onClick={this.CanonicalHandler}
                 >
                   Convert to Canonical Form
                 </button>
               </form>
-<br />
-              <table className="table">
+
+              <table className="table margin-details-top">
                 {this.state.CanonicalData.length > 0 ? (
                   <thead>
                     <tr>

@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import Container from "./Components/Container";
 import Fileupload from "./Components/Fileupload";
 import FileDetails from "./Components/fileDetails";
+import './App.css';
+
 function App() {
   return (
     <div>

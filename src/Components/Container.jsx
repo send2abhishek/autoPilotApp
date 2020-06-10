@@ -1,24 +1,29 @@
 import React, { Component } from "react";
+
 class Container extends Component {
+  
   constructor(props) {
     super(props);
     this.state = {};
   }
 
+  //handling the next button which takes the selected option of upload to the file upload page.
   clickHandler = () => {
     this.props.history.replace("/uploadXs");
   };
+
+  //for view
   render() {
     return (
       <div className="container border">
         <div className="row">
           <div className="col-sm-12">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{"height":"45px"}}>
-          <a class="navbar-brand" style={{"marginLeft":"37%"}} href="#">Prototype-1</a>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-dimensions">
+          <a className="navbar-brand navbar-text" href="#">Prototype-1</a>
             </nav>
           </div>
           <div className="col-sm border-right">
-          <h5 style={{color: 'grey'}}>
+          <h5 className="side-bar-text">
             <ul className="list-unstyled">
               <br />
 
@@ -36,10 +41,8 @@ class Container extends Component {
           </div>
 
           <div className="col-sm-7">
-            <br />
-            <h2 >View</h2>
-            <br />
-            <h4 style={{color: 'grey', marginBottom:'12px'}}>Select method of upload: </h4>
+            <h2 className="margin-h2-top">View</h2>
+            <h4 className="h4-text margin-h4-top">Select method of upload: </h4>
             <form>
               <div className="form-check">
                 <label className="form-check-label">
@@ -90,10 +93,9 @@ class Container extends Component {
                   Scan Import
                 </label>
               </div>
-              <br />
               <button
                 type="submit"
-                className="btn btn-primary" style={{"marginBottom":"10px"}}
+                className="btn btn-primary button-style"
                 onClick={() => this.clickHandler()}
               >
                 Next

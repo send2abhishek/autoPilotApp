@@ -1,0 +1,44 @@
+.navbar-dimensions{
+    height:45px;
+}
+
+.navbar-text{
+    margin-left : 37%;
+}
+
+.side-bar-text{
+    color: grey;
+}
+
+.h4-text{
+    color: grey;
+    margin-bottom:12px;
+}
+
+.button-style{
+    margin-bottom:10px;
+    margin-top:20px;
+}
+
+.margin-upload{
+    margin-top:14px;
+}
+
+.margin-h2-top{
+    margin-top:15px;
+}
+
+.margin-h4-top{
+    margin-top:25px;
+}
+
+.margin-details-top{
+    margin-top:32px;
+}
+
+.choose-file-style{
+    padding-top: 1.275rem !important;
+    padding-right: 0.75rem !important;
+    padding-bottom:2.975rem !important;
+    padding-left: 0.75rem !important;
+}
